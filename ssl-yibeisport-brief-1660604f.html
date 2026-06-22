@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易倍体育 · 运动视野专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9f9;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2a3a;
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 1.2rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 3.6rem 0 4rem 0;
+        }
+
+        /* 首页横幅 hero */
+        .hero {
+            margin-bottom: 3.8rem;
+            border-bottom: 1px solid #e2e8ed;
+            padding-bottom: 2rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #dce3eb;
+            color: #2c3e50;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #121a26;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #3a4a5c;
+            max-width: 660px;
+        }
+
+        .hero .accent-line {
+            width: 60px;
+            height: 3px;
+            background: #2b6b8c;
+            margin-top: 1.4rem;
+            border-radius: 4px;
+        }
+
+        /* 背景说明卡片 */
+        .context-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.2rem 2.6rem;
+            margin-bottom: 3.2rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf1f5;
+        }
+
+        .context-card .subhead {
+            font-size: 0.8rem;
+            color: #667788;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .context-card h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1f2a3a;
+            margin-bottom: 1.2rem;
+        }
+
+        .context-card p {
+            font-size: 1rem;
+            color: #2b3b4c;
+            margin-bottom: 1rem;
+        }
+
+        .context-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段自然介绍 – 用简约列表风格 */
+        .insight-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+            margin-bottom: 3.4rem;
+        }
+
+        .insight-item {
+            padding-left: 1.8rem;
+            border-left: 2px solid #d7e0e8;
+            transition: border-color 0.15s;
+        }
+
+        .insight-item:hover {
+            border-left-color: #2b6b8c;
+        }
+
+        .insight-item .step {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5b7288;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.2rem;
+        }
+
+        .insight-item h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1f2a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-item p {
+            font-size: 0.98rem;
+            color: #2f4053;
+            max-width: 640px;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 1.2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e8ed;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem 1.5rem;
+        }
+
+        .footer-note .foot-text {
+            font-size: 0.95rem;
+            color: #3a4a5c;
+        }
+
+        .footer-note .foot-text a {
+            color: #1f2a3a;
+            text-decoration: none;
+            border-bottom: 1px solid #b7c4d2;
+            font-weight: 500;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .footer-note .foot-text a:hover {
+            color: #0b141f;
+            border-bottom-color: #2b6b8c;
+        }
+
+        .footer-note .foot-meta {
+            font-size: 0.78rem;
+            color: #8699ab;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .page {
+                padding: 2rem 0 2.8rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .context-card {
+                padding: 1.6rem 1.6rem;
+            }
+
+            .insight-item {
+                padding-left: 1.2rem;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 440px) {
+            body {
+                padding: 0 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .context-card h2 {
+                font-size: 1.4rem;
+            }
+
+            .insight-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <span class="hero-tag">运动 · 视野 · 专题</span>
+        <h1>竞技的纵深<br>与日常的呼吸</h1>
+        <p>体育不只属于赛事的高光时刻，也浸润在每一次训练、策略与持久的热爱中。从专业场馆到社区场地，从数据复盘到直觉判断——运动场景正在被重新定义。</p>
+        <div class="accent-line"></div>
+    </div>
+
+    <!-- 背景说明卡：平台与理念 -->
+    <div class="context-card">
+        <div class="subhead">背景观察</div>
+        <h2>体育场景的复合生态</h2>
+        <p>过去十年，体育服务的边界从单一赛事延伸至资讯聚合、数据工具与社群互动。参与者不再只是观众，而是分析者、记录者与分享者。一个整合了实时动态、运动知识库与交流环境的平台，逐渐成为许多人日常关注体育的入口。</p>
+        <p><a href="https://ssl-yibeisport.com">易倍体育</a>正是在这样多元需求下搭建的信息节点。它提供赛事数据、运动趋势与内容聚合，帮助使用者更高效地获取体育资讯，同时也为不同运动兴趣的人群创造一个集中的信息空间。平台覆盖足球、篮球、网球、电竞等多个领域，并持续更新相关的深度内容与数据参考。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="insight-grid">
+        <div class="insight-item">
+            <div class="step">01 · 信息密度</div>
+            <h3>实时数据与赛事脉络</h3>
+            <p>体育迷对速度与深度的要求并存。平台整合联赛积分、球员统计、赛程变动等核心数据，并以清晰的结构呈现。从主流职业联赛到区域性锦标赛，用户可快速定位自己关注的赛事，减少信息筛选成本。</p>
+        </div>
+        <div class="insight-item">
+            <div class="step">02 · 内容纵深</div>
+            <h3>解析、回顾与趋势观察</h3>
+            <p>除了基础数据，平台内容涵盖战术分析、历史经典回顾以及新兴运动项目的介绍。无论是足球阵型演变，还是电子竞技的职业化进程，都能找到对应的专题或短文。内容风格偏向理性、客观，不追逐短期热点，更注重长期的信息积累。</p>
+        </div>
+        <div class="insight-item">
+            <div class="step">03 · 互动与交流</div>
+            <h3>社群评论与观点碰撞</h3>
+            <p>体育讨论本身即是文化。平台为用户提供开放的表达空间，每篇文章、每场赛事下方都可看到来自不同视角的评论。管理者维护基本的讨论秩序，鼓励有依据的分析与友好的辩论。这种交流氛围让体育信息不再是单向输出，而成为社区的共同构建。</p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <div class="foot-text">
+            了解更丰富的赛事资讯与运动内容，可前往 <a href="https://ssl-yibeisport.com">易倍体育</a> 浏览最新专题和数据版块。平台持续更新，适配移动端与桌面端。
+        </div>
+        <div class="foot-meta">
+            · 信息参考 · 运动视野
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
